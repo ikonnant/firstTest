@@ -76,7 +76,7 @@
       <module fileurl="file://$PROJECT_DIR$/firstTest.iml" filepath="$PROJECT_DIR$/firstTest.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="11.0.4" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="11.0.5" project-jdk-type="JavaSDK" />
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/build" vcs="Git" />
