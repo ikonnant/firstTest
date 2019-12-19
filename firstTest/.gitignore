@@ -1,6 +1,6 @@
 /firstTest.iws
 
-build/
-target/
+/firstTest/build/
+/firstTest/target/
 
-src/test/java/configuration/Config.java
+/firstTest/src/test/java/configuration/Config.java
