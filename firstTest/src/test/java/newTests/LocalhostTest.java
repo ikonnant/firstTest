@@ -18,11 +18,6 @@ import static com.codeborne.selenide.WebDriverRunner.*;
 public class LocalhostTest extends Config {
     static String url;
 
-    @Before
-    public void clearCache() {
-        clearBrowserCache();
-    }
-
     @BeforeClass
     public static void beforeTest() throws IOException {
         Configuration.baseUrl = "http://localhost";
@@ -59,6 +54,18 @@ public class LocalhostTest extends Config {
         driver.quit();
     }
 
+    @AfterClass
+    public static void fails() throws IOException {
+        BaseTests.bitrixAuthorize();
+        deleteNews();
+        close();
+    }
+
+    @Before
+    public void clearCache() {
+        clearBrowserCache();
+    }
+
     @Test
     public void testMainResponseCode400() throws IOException {
         open("/");
@@ -72,12 +79,5 @@ public class LocalhostTest extends Config {
         open("/404/");
         screenshot("test404ResponseCode");
         BaseTests.shouldResponseCode(404);
-    }
-
-    @AfterClass
-    public static void fails() throws IOException {
-        BaseTests.bitrixAuthorize();
-        deleteNews();
-        close();
     }
 }

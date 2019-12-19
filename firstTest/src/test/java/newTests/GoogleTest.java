@@ -8,12 +8,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-import java.io.*;
+import java.io.IOException;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class GoogleTest extends Config{
+public class GoogleTest extends Config {
+
+    @AfterClass
+    public static void fails() {
+        open("https://ruseller.com/lessons/les1641/demo/index.html");
+    }
 
     @Before
     public void updateConfig() {
@@ -34,10 +39,5 @@ public class GoogleTest extends Config{
         $$("#rso .g").shouldHaveSize(6);
         $("#rso .g").shouldHave(text("Se1lenide: лаконичные и стабильные UI тесты на Java"));
         //Assert.fail(String.valueOf($("#rso .g").getSize().getWidth()));
-    }
-
-    @AfterClass
-    public static void fails() {
-        open("https://ruseller.com/lessons/les1641/demo/index.html");
     }
 }

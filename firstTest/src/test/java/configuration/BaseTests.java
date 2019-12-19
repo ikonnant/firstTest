@@ -9,13 +9,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class BaseTests {
     public static void shouldResponseCode(int respCode) throws IOException {
         URL url = new URL(url());
-        HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
         if (Config.baseName != null && Config.basePassword != null) {
             String authString = Config.baseName + ":" + Config.basePassword;
@@ -27,7 +26,7 @@ public class BaseTests {
 
         connection.connect();
 
-        if(connection.getResponseCode() != respCode) {
+        if (connection.getResponseCode() != respCode) {
             Assert.fail(url() + " Error: Response code not " + respCode + " : " + connection.getResponseCode());
             close();
         }
