@@ -79,7 +79,6 @@
   <component name="ProjectRootManager" version="2" project-jdk-name="11.0.5" project-jdk-type="JavaSDK" />
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/build" vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="Maven: com.beust:jcommander:1.72">
