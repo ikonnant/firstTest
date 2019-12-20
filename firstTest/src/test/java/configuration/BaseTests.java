@@ -56,6 +56,7 @@ public class BaseTests {
         }
     }
 
+    @NotNull
     public static String bitrixAddNews(@NotNull String[][] inputs) throws IOException {
         open("/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=" + Config.newsIblockID + "&type=" + Config.directoryType + "&ID=0&lang=ru&find_section_section=0&IBLOCK_SECTION_ID=0&from=iblock_list_admin");
         shouldResponseCode(200);
