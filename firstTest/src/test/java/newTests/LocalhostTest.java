@@ -25,14 +25,14 @@ public class LocalhostTest extends Config {
         url = BaseTests.bitrixAddNews(new String[][]{
             {"NAME", "ТЕСТОВАЯ НОВОСТЬ", "setValue"},
             {"PROP[47][]", " ЖК Fjord", "selectOption"},
-            {"XML_ID", "123456789TEST", "setValue"}
+            //{"XML_ID", "123456789TEST", "setValue"}
         });
 
         BaseTests.bitrixDeauthorize();
     }
 
     @AfterClass
-    public static void fails() throws IOException {
+    public static void afterTest() throws IOException {
         BaseTests.bitrixAuthorize();
         BaseTests.bitrixDeleteNews(url);
         close();
@@ -44,13 +44,13 @@ public class LocalhostTest extends Config {
     }
 
     @Test
-    public void testMainResponseCode400() throws IOException {
+    public void testPageMainResponseCode200() throws IOException {
         open("/");
-        BaseTests.shouldResponseCode(400);
+        BaseTests.shouldResponseCode(200);
     }
 
     @Test
-    public void test404ResponseCode() throws IOException {
+    public void testPage404ResponseCode404() throws IOException {
         BaseTests.bitrixAuthorize();
 
         open("/404/");
